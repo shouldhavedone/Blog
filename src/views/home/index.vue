@@ -1,19 +1,38 @@
 <template>
-  <div>
-    <div class="header">我是头部</div>
-    <el-scrollbar style="height: 100%">
-      <router-view v-if="!$route.meta.keepalive" :key="$route.path"></router-view>
+  <div class="home-container">
+    <cheader></cheader>
+    <el-scrollbar>
+      <router-view
+        v-if="!$route.meta.keepalive"
+        :key="$route.path"
+      ></router-view>
     </el-scrollbar>
   </div>
 </template>
 <script>
+import cheader from './header'
 export default {
-  
-}
-</script>
-<style lang="less">
-  .header {
-    height: 100px;
-    width: 100%;
+  name: "homeContainer",
+  components: {
+    cheader,
   }
+};
+</script>
+<style lang="less" scoped>
+@height: 100vh/960px;
+@width: 100vw/1920px;
+@height1: 60px * @height;
+
+.home-container {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+
+  .el-scrollbar {
+  width: 1200px * @width;
+
+    height: calc(100% - @height1);
+  }
+}
 </style>
