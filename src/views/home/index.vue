@@ -10,12 +10,12 @@
   </div>
 </template>
 <script>
-import cheader from './header'
+import cheader from "./header";
 export default {
   name: "homeContainer",
   components: {
     cheader,
-  }
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -30,9 +30,9 @@ export default {
   margin: 0 auto;
 
   .el-scrollbar {
-  width: 1200px * @width;
-
+    width: 1200px * @width;
     height: calc(100% - @height1);
+    margin: 0 auto;
   }
 }
 </style>

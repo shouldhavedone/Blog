@@ -6,7 +6,13 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
+    path: "/",
+    redirect: "/articles",
+    name: "index",
+    component: () => import("./views/articles"),
+  },
+  {
+    path: '/articles',
     component: Home,
     children: [
       {

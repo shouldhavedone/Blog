@@ -1,18 +1,26 @@
 <template>
   <div class="header-container">
-    <div class="header-left">
-      <div class="logo">
-        <img src="../../assets/images/logo.png" />
-      </div>
-      <div class="nav-wrap">
-        <div class="nav-item" v-for="(item, index) in navList" :key="index">
-          <div>{{ item.name }}</div>
+    <div class="header-wrap">
+      <div class="header-left">
+        <div class="logo">
+          <img src="../../assets/images/logo.png" />
+        </div>
+        <div class="nav-wrap">
+          <div
+            class="nav-item"
+            :class="activeIndex == index ? 'active' : ''"
+            v-for="(item, index) in navList"
+            :key="index"
+            @click="changeIndex(index)"
+          >
+            {{ item.name }}
+          </div>
         </div>
       </div>
-    </div>
-    <div class="header-right">
-      <el-button size='small'>登录</el-button>
-      <el-button size='small'>注册</el-button>
+      <div class="header-right">
+        <el-button type="primary" size="small">登录</el-button>
+        <el-button type="danger" size="small">注册</el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -27,11 +35,17 @@ export default {
         { name: "文章", url: "/articles" },
         { name: "归档", url: "/articles" },
         { name: "项目", url: "/articles" },
-        { name: "留言", url: "/articles" },
         { name: "历程", url: "/articles" },
         { name: "关于", url: "/articles" },
       ],
+      activeIndex: 0,
     };
+  },
+
+  methods: {
+    changeIndex(index) {
+      this.activeIndex = index;
+    },
   },
 };
 </script>
@@ -42,22 +56,28 @@ export default {
 
 .header-container {
   height: @height1;
+  width: 100%;
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
+}
+
+.header-wrap {
   width: 1200px * @width;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(238, 238, 238, 1);
 
   .header-left {
-    flex: 3;
+    flex: 4;
     display: flex;
+    align-items: center;
   }
 
   .header-left .logo {
     width: 60px * @width;
     height: 100%;
-    margin-right: 60px * @width;
+    margin-right: 84px * @width;
 
     img {
       height: 52px * @height;
@@ -67,15 +87,28 @@ export default {
     }
   }
 
+  .active {
+    border-bottom: 2px solid #409eff;
+    color: #409eff;
+  }
+
   .header-left .nav-wrap {
     flex: 1;
     display: flex;
     justify-content: space-around;
-    align-items: center;  
+    align-items: center;
+
+    .nav-item {
+      height: @height1;
+      width: 100%;
+      line-height: @height1;
+    }
   }
 
   .header-right {
-    flex: 1;
+    flex: 3;
+    text-align: right;
+    padding-right: 50px * @width;
   }
 }
 </style>
