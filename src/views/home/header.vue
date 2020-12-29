@@ -37,6 +37,7 @@ export default {
         { name: "归档", url: "/archive" },
         { name: "项目", url: "/project" },
         { name: "历程", url: "/timeline" },
+        { name: "留言", url: "/message" },
         { name: "关于", url: "/about" },
       ],
       activeIndex: 0,

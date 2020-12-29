@@ -56,6 +56,17 @@ const routes = [
     ]
   },
   {
+    path: '/message',
+    component: Home,
+    children: [
+      {
+        path: "",
+        name: "/message",
+        component: () => import("./views/message"),
+      },
+    ]
+  },
+  {
     path: '/about',
     component: Home,
     children: [
