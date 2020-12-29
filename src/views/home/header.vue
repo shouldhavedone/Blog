@@ -9,10 +9,11 @@
           <template v-for="(item, index) in navList">
             <router-link class="nav-item" :to="item.url" :key="index">
               <div
-                
                 :class="activeIndex == index ? 'active' : ''"
                 @click="changeIndex(item, index)"
-              >{{item.name}}</div>
+              >
+                {{ item.name }}
+              </div>
             </router-link>
           </template>
         </div>
@@ -67,6 +68,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
 
   .header-left {
     flex: 4;

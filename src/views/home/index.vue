@@ -40,7 +40,6 @@ export default {
 .home-container {
   height: 100%;
   width: 100%;
-  text-align: center;
   margin: 0 auto;
 
   .content {

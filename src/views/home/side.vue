@@ -62,6 +62,7 @@ export default {};
   height: 100%;
   width: 100%;
   margin-top: 20px * @height;
+  text-align: center;
 
   .userInfo {
     height: 200px;
