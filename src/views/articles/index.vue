@@ -16,6 +16,7 @@
           <img :src="item.image" />
         </div>
       </div>
+      <div>--------- 我也是有底线的啦 ---------</div>
     </div>
   </div>
 </template>

@@ -2,13 +2,13 @@
   <div class="home-container">
     <el-backtop></el-backtop>
     <cheader></cheader>
-    <div class="content">
-      <el-scrollbar>
+    <div class="content-wrap">
+      <div class="content">
         <div class="left-wrap">
           <router-view></router-view>
         </div>
         <cside v-if="isShowSlider" class="right-wrap"></cside>
-      </el-scrollbar>
+      </div>
       <cfooter></cfooter>
     </div>
   </div>
@@ -46,17 +46,13 @@ export default {
   width: 100%;
   text-align: center;
   margin: 0 auto;
-  
-  .el-scrollbar {
+
+  .content {
     width: 1200px;
     height: calc(100% - @height1);
     margin: 0 auto;
+    display: flex;
     padding: 20px * @height 0;
-
-    /deep/.el-scrollbar__view {
-      height: 100%;
-      display: flex;
-    }
   }
 
   .left-wrap {
