@@ -30,10 +30,6 @@ export default {
       isShowSlider: true,
     };
   },
-
-  mounted() {
-    console.log(this.$route);
-  },
 };
 </script>
 <style lang="less" scoped>
