@@ -6,15 +6,15 @@
           <img src="../../assets/images/logo.png" />
         </div>
         <div class="nav-wrap">
-          <div
-            class="nav-item"
-            :class="activeIndex == index ? 'active' : ''"
-            v-for="(item, index) in navList"
-            :key="index"
-            @click="changeIndex(index)"
-          >
-            {{ item.name }}
-          </div>
+          <template v-for="(item, index) in navList">
+            <router-link class="nav-item" :to="item.url" :key="index">
+              <div
+                
+                :class="activeIndex == index ? 'active' : ''"
+                @click="changeIndex(item, index)"
+              >{{item.name}}</div>
+            </router-link>
+          </template>
         </div>
       </div>
       <div class="header-right">
@@ -33,17 +33,17 @@ export default {
       navList: [
         { name: "首页", url: "/" },
         { name: "文章", url: "/articles" },
-        { name: "归档", url: "/articles" },
-        { name: "项目", url: "/articles" },
-        { name: "历程", url: "/articles" },
-        { name: "关于", url: "/articles" },
+        { name: "归档", url: "/archive" },
+        { name: "项目", url: "/project" },
+        { name: "历程", url: "/timeline" },
+        { name: "关于", url: "/about" },
       ],
       activeIndex: 0,
     };
   },
 
   methods: {
-    changeIndex(index) {
+    changeIndex(item, index) {
       this.activeIndex = index;
     },
   },
@@ -61,7 +61,7 @@ export default {
 }
 
 .header-wrap {
-  width: 1200px * @width;
+  width: 1200px;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -99,8 +99,9 @@ export default {
     align-items: center;
 
     .nav-item {
+      flex: 1;
       height: @height1;
-      width: 100%;
+      // width: 100%;
       line-height: @height1;
     }
   }
