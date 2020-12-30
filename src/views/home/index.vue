@@ -41,23 +41,31 @@ export default {
   height: 100%;
   width: 100%;
   margin: 0 auto;
+  position: relative;
 
-  .content {
-    width: 1200px;
+  .content-wrap {
+    width: 100%;
+    margin-top: @height1;
     height: calc(100% - @height1);
-    margin: 0 auto;
-    display: flex;
-    padding: 20px * @height 0;
-  }
+    position: absolute;
 
-  .left-wrap {
-    width: 71%;
-    height: 100%;
-  }
+    .content {
+      width: 1200px;
+      // height: 100%;
+      margin: 0 auto;
+      display: flex;
+      padding: 20px * @height 0;
+    }
 
-  .right-wrap {
-    width: 28%;
-    height: 100%;
+    .left-wrap {
+      width: 71%;
+      height: 100%;
+    }
+
+    .right-wrap {
+      width: 28%;
+      height: 100%;
+    }
   }
 }
 </style>

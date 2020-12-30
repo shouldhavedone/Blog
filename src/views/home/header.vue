@@ -60,6 +60,9 @@ export default {
   height: @height1;
   width: 100%;
   border-bottom: 1px solid rgba(238, 238, 238, 1);
+  position: fixed;
+  z-index: 2;
+  background-color: #fff;
 }
 
 .header-wrap {
