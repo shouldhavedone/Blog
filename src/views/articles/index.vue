@@ -91,6 +91,7 @@ export default {
   color: #333;
   height: 30px * @height;
   line-height: 30px * @height;
+  letter-spacing: 3px;
 }
 
 .article-item {
