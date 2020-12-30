@@ -20,6 +20,18 @@ const routes = [
         name: "/articles",
         component: () => import("./views/articles"),
       },
+      
+    ]
+  },
+  {
+    path: '/detail',
+    component: Home,
+    children: [
+      {
+        path: "",
+        name: "/detail",
+        component: () => import("./views/articles/detail"),
+      },
     ]
   },
   {

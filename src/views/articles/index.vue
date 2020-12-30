@@ -1,7 +1,12 @@
 <template>
   <div class="articles-list">
     <div class="articles-wrap">
-      <div class="article-item" v-for="(item, index) in dataList" :key="index">
+      <div
+        class="article-item"
+        v-for="(item, index) in dataList"
+        :key="index"
+        @click="toDetail(item.id)"
+      >
         <div class="content-left">
           <div class="title">{{ item.title }}</div>
           <p class="desc">{{ item.description }}</p>
@@ -74,6 +79,17 @@ export default {
         },
       ],
     };
+  },
+
+  methods: {
+    toDetail(val) {
+      this.$router.push({
+        path: `/detail?id=${val}`,
+        query: {
+          id: val,
+        }
+      });
+    },
   },
 };
 </script>
