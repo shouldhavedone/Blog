@@ -227,8 +227,3 @@ a {
   clear: both;
   visibility: hidden;
 }
-
-.el-button--primary {
-  background: #2652fe !important;
-  border-color: #2652fe !important;
-}

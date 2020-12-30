@@ -202,3 +202,35 @@ export const download = function (data, filename) {
     link.click();
   }
 }
+
+// 手机号验证
+function isValidTel(str) {
+  const reg = /^1[3|4|5|7|8|9][0-9]\d{8}$/
+  return reg.test(str)
+}
+
+// 邮箱验证
+function isValidEmail(str) {
+  const reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+  return reg.test(str)
+}
+
+export const validTel = (rule, value, callback) => {
+  if (!value) {
+    callback(new Error('手机号不能为空'))
+  } else if (!isValidTel(value)) {
+    callback(new Error('请输入正确的11位手机号码'))
+  } else {
+    callback()
+  }
+}
+
+export const validEmail = (rule, value, callback) => {
+  if (!value) {
+    callback(new Error('邮箱不能为空'))
+  } else if (!isValidEmail(value)) {
+    callback(new Error('请输入正确的邮箱'))
+  } else {
+    callback()
+  }
+}

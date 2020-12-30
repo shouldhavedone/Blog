@@ -16,7 +16,7 @@
           <img :src="item.image" />
         </div>
       </div>
-      <div>--------- 我也是有底线的啦 ---------</div>
+      <div class="bottom-msg">--------- 我也是有底线的啦 ---------</div>
     </div>
   </div>
 </template>
@@ -85,6 +85,12 @@ export default {
   margin-top: 20px * @height;
   height: 100%;
   width: 100%;
+}
+.bottom-msg {
+  text-align: center;
+  color: #333;
+  height: 30px * @height;
+  line-height: 30px * @height;
 }
 
 .article-item {
