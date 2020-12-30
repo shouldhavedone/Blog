@@ -2,7 +2,7 @@
   <div class="home-container">
     <el-backtop></el-backtop>
     <cheader></cheader>
-    <div class="content-wrap">
+    <el-scrollbar class="content-wrap">
       <div class="content">
         <div class="left-wrap">
           <router-view></router-view>
@@ -10,7 +10,7 @@
         <cside v-if="isShowSlider" class="right-wrap"></cside>
       </div>
       <cfooter></cfooter>
-    </div>
+    </el-scrollbar>
   </div>
 </template>
 <script>

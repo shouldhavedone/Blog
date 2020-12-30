@@ -98,6 +98,7 @@ export default {};
     height: 200px;
     width: 100%;
     padding: 16px * @height 24 * @width;
+    cursor: pointer;
 
     &>div:first-child {
       margin-bottom: 10px * @height;
@@ -115,6 +116,9 @@ export default {};
       background-color: #eee;
       padding: 6px 8px;
       margin: 6px;
+    }
+    .cloud li:hover {
+      color: #409eff;
     }
   }
 }

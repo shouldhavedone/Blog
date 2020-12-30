@@ -7,7 +7,7 @@
         </div>
         <div class="nav-wrap">
           <template v-for="(item, index) in navList">
-            <router-link class="nav-item" :to="item.url" :key="index">
+            <router-link class="nav-item" :to="item.url" :key="index" exact >
               <div
                 :class="activeIndex == index ? 'active' : ''"
                 @click="changeIndex(item, index)"
