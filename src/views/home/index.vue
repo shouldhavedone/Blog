@@ -30,6 +30,33 @@ export default {
       isShowSlider: true,
     };
   },
+
+  watch: {
+    $route(val, oldVal) {
+      this.routeChange(val);
+    },
+  },
+
+  mounted() {
+    this.routeChange(this.$route);
+  },
+
+  methods: {
+    routeChange(val) {
+      console.log(val.path);
+      if (
+        val.path === "/articles" ||
+        val.path === "/archive" ||
+        val.path === "/project" ||
+        val.path === "/timeline" ||
+        val.path === "/message"
+      ) {
+        this.isShowSlider = true;
+      } else {
+        this.isShowSlider = false;
+      }
+    },
+  },
 };
 </script>
 <style lang="less" scoped>
